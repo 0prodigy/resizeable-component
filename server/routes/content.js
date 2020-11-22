@@ -1,8 +1,13 @@
-const { addContent } = require("../controllers/contentController");
-const { default: Content } = require("../models/Content");
+const {
+  addContent,
+  getContent,
+  updateContent,
+} = require("../controllers/contentController");
 const { textValidation } = require("../validation/contentValidation");
 const router = require("express").Router();
 
-router.get("/add", textValidation, addContent);
+router.get("/", getContent);
+router.post("/add", textValidation, addContent);
+router.post("/update", textValidation, updateContent);
 
-export default router;
+module.exports = router;

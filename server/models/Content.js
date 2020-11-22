@@ -8,4 +8,4 @@ const contentSchema = new Schema({
   },
 });
 
-export default mongoose.model("Content", contentSchema);
+module.exports = mongoose.model("Content", contentSchema);
